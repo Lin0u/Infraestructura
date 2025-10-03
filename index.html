@@ -1,0 +1,127 @@
+# Infraestructura
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajo Azure - IaaS vs PaaS</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin: 20px 0;
+        }
+        h1 {
+            color: #0078d4;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #0078d4;
+            padding-bottom: 10px;
+        }
+        .service-card {
+            border: 1px solid #ddd;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .vm { 
+            border-left: 6px solid #28a745;
+            background: #f8fff9;
+        }
+        .app-service { 
+            border-left: 6px solid #0078d4;
+            background: #f0f8ff;
+        }
+        .info-box {
+            background: #e7f3ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .specs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        .spec-item {
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        @media (max-width: 768px) {
+            .specs { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Trabajo Azure - Servicios Cloud</h1>
+        <h2>Comparativa IaaS vs PaaS</h2>
+        
+        <div class="service-card vm">
+            <h3>Máquina Virtual Linux (IaaS)</h3>
+            <div class="specs">
+                <div class="spec-item"><strong>Tipo:</strong> Infrastructure as a Service</div>
+                <div class="spec-item"><strong>SO:</strong> Ubuntu 22.04</div>
+                <div class="spec-item"><strong>Servidor Web:</strong> Nginx</div>
+                <div class="spec-item"><strong>IP:</strong> 68.211.123.20</div>
+            </div>
+            <p><strong>Configuración:</strong> NSG con puertos 22 (SSH) y 80 (HTTP)</p>
+        </div>
+
+        <div class="service-card app-service">
+            <h3>Azure App Service (PaaS)</h3>
+            <div class="specs">
+                <div class="spec-item"><strong>Tipo:</strong> Platform as a Service</div>
+                <div class="spec-item"><strong>Runtime:</strong> Node.js 18</div>
+                <div class="spec-item"><strong>Despliegue:</strong> GitHub Integration</div>
+                <div class="spec-item"><strong>Escalado:</strong> Automático (2 instancias)</div>
+            </div>
+            <p><strong>Características:</strong> Gestión automática de plataforma</p>
+        </div>
+
+        <div class="info-box">
+            <h3>Análisis de Diferencias</h3>
+            <p><strong>IaaS (Máquina Virtual):</strong> Control total pero mayor gestión requerida</p>
+            <p><strong>PaaS (App Service):</strong> Menos control pero desarrollo más ágil</p>
+            <p><strong>Implementado con:</strong> Azure CLI y Azure Portal</p>
+        </div>
+
+        <div class="info-box">
+            <h3>Información del Estudiante</h3>
+            <p><strong>Nombre:</strong> [Tu Nombre Aquí]</p>
+            <p><strong>Curso:</strong> Servicios Azure</p>
+            <p><strong>Fecha:</strong> <span id="fecha"></span></p>
+        </div>
+    </div>
+
+    <script>
+        // Fecha automática
+        document.getElementById('fecha').textContent = new Date().toLocaleDateString('es-ES', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    </script>
+</body>
+</html>
